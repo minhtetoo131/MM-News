@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_medium_2"
+    android:layout_marginLeft="@dimen/margin_medium_2"
+    android:layout_marginRight="@dimen/margin_medium_2"
+    card_view:cardElevation="@dimen/margin_small"
+    card_view:cardBackgroundColor="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_publication_logo"
+            android:layout_width="@dimen/logo_size"
+            android:layout_height="@dimen/logo_size"
+            android:src="@drawable/img_publication_logo_placeholder"
+            android:layout_margin="@dimen/margin_card_medium_2"
+            />
+
+        <TextView
+            android:id="@+id/tv_publication_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_publication_logo"
+            android:layout_toEndOf="@+id/iv_publication_logo"
+            android:text="Eleven Media"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/text_regular_2x"/>
+
+        <TextView
+            android:id="@+id/tv_publish_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_publication_name"
+            android:layout_toEndOf="@+id/iv_publication_logo"
+            android:text="Posted At : jan 01 6.30 AM"
+            android:textColor="@color/secondary_text" />
+
+        <ImageView
+            android:id="@+id/iv_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_favorite_border_24dp"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/margin_medium_2"
+            android:foreground="@drawable/bg_ripple_primary"
+            android:clickable="true"
+            />
+
+        <TextView
+            android:id="@+id/tv_brief_new"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_publication_logo"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/margin_medium_n"
+            android:text="@string/dummy_new"
+            android:textColor="@color/primary_text"
+            android:lineSpacingMultiplier="1.3"
+            android:maxLines="8"
+            android:ellipsize="end"/>
+
+        <ImageView
+            android:id="@+id/iv_news_hero_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/img_placeholder"
+            android:layout_below="@id/tv_brief_new"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            />
+
+        <TextView
+            android:id="@+id/tv_news_statistical_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 Likes - 3Coment -sendTo 16"
+            android:layout_below="@id/iv_news_hero_image"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:textColor="@color/primary"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_news_user_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_below="@id/tv_news_statistical_data">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                >
+
+                <TextView
+                    android:id="@+id/btn_comment_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/size_tappable_small"
+                    android:text="@string/btn_comment_news"
+                    android:gravity="center"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text_regular"
+                    android:drawableStart="@drawable/ic_chat_bubble_outline_24dp"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/margin_medium_2"
+                    android:foreground="@drawable/bg_ripple_primary"
+                    android:clickable="true"
+                    />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                >
+
+
+                <TextView
+                    android:id="@+id/btn_send_to_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/size_tappable_small"
+                    android:layout_weight="1"
+                    android:text="@string/btn_send_to_news"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/text_regular"
+                    android:drawableStart="@drawable/ic_send_24dp"
+                    android:drawablePadding="@dimen/margin_medium_2"
+                    android:foreground="@drawable/bg_ripple_primary"
+                    android:clickable="true"
+                    />
+
+            </FrameLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+</android.support.v7.widget.CardView>
+
+
+
+
