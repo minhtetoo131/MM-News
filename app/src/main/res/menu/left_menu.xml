@@ -3,15 +3,19 @@
 
     <item
         android:id="@+id/menu_latest_news"
-        android:title="Latest News" />
+        android:title="Latest News"
+        android:icon="@drawable/ic_autorenew_latest_new_24dp"
+        android:checked="true"/>
 
     <item
         android:id="@+id/menu_just_for_you"
-        android:title="News Just For You" />
+        android:title="News Just For You"
+        android:icon="@drawable/ic_autorenew_latest_new_24dp"/>
 
 
     <item
         android:id="@+id/menu_favorite_news"
-        android:title="Favorite News" />
+        android:title="Favorite News"
+        android:icon="@drawable/ic_favorite_news_24dp"/>
 
 </menu>
