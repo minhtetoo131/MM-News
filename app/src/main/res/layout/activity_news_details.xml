@@ -109,7 +109,10 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_marginBottom="@dimen/margin_xxxlarge"
+
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -124,8 +127,29 @@
                 android:layout_height="wrap_content"
                 android:text="@string/dummy_news_details"
                 android:layout_margin="@dimen/margin_medium"
-                android:paddingBottom="80dp"
                 android:textColor="@color/primary_text"/>
+
+            <TextView
+                android:id="@+id/lbl_related_news"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/related_news"
+                android:layout_below="@id/tv_news_details"
+                android:textColor="@color/black_full"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_related_news"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lbl_related_news"
+                android:layout_margin="@dimen/margin_medium"
+                >
+
+
+
+            </android.support.v7.widget.RecyclerView>
 
 
 
