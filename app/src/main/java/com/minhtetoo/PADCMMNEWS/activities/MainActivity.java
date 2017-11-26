@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements NewsItemsDelegate
     @BindView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
 
+    private SmartScrollListener mSmartScrollsitener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,16 +44,25 @@ public class MainActivity extends AppCompatActivity implements NewsItemsDelegate
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
 
-                mDrawerLayout.openDrawer(GravityCompat.END);
+                mDrawerLayout.openDrawer(GravityCompat.START);
             }
         });
 
-        RecyclerView rvnews =findViewById(R.id.rv_news);
+        final RecyclerView rvnews =findViewById(R.id.rv_news);
         rvnews.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
 
         NewsAdapter newsAdapter = new NewsAdapter(getApplicationContext(),this);
 
         rvnews.setAdapter(newsAdapter);
+        mSmartScrollsitener = new SmartScrollListener(new SmartScrollListener.OnSmartScrollListener() {
+            @Override
+            public void onListEndReach() {
+                Snackbar.make(rvnews,"this is end",Snackbar.LENGTH_LONG).show();
+            }
+        });
+
+
+        rvnews.addOnScrollListener(mSmartScrollsitener);
 
     }
 
