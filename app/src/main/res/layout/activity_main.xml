@@ -35,7 +35,7 @@
 
 
 
-            <android.support.v7.widget.RecyclerView
+            <com.minhtetoo.PADCMMNEWS.components.SmartRecyclerView
                 android:id="@+id/rv_news"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -43,7 +43,14 @@
 
 
 
-            </android.support.v7.widget.RecyclerView>
+            </com.minhtetoo.PADCMMNEWS.components.SmartRecyclerView>
+
+            <include
+                android:id="@+id/vp_empty_news"
+                layout="@layout/view_pod_empty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
 
 
 

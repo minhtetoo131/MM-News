@@ -16,6 +16,8 @@ import android.view.MenuItem;
 
 import com.minhtetoo.PADCMMNEWS.R;
 import com.minhtetoo.PADCMMNEWS.adapters.NewsAdapter;
+import com.minhtetoo.PADCMMNEWS.components.EmptyViewPod;
+import com.minhtetoo.PADCMMNEWS.components.SmartRecyclerView;
 import com.minhtetoo.PADCMMNEWS.delegates.NewsItemsDelegate;
 
 import butterknife.BindView;
@@ -25,6 +27,11 @@ public class MainActivity extends AppCompatActivity implements NewsItemsDelegate
 
     @BindView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
+    @BindView(R.id.rv_news)
+    SmartRecyclerView smartRecyclerView;
+
+    @BindView(R.id.vp_empty_news)
+    EmptyViewPod vpEmptyNews;
 
     private SmartScrollListener mSmartScrollsitener;
 
@@ -44,11 +51,16 @@ public class MainActivity extends AppCompatActivity implements NewsItemsDelegate
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
 
-                mDrawerLayout.openDrawer(GravityCompat.START);
+
+                Intent i = LoginRegisterActivity.newIntent(getApplicationContext());
+                startActivity(i);
+
+//                mDrawerLayout.openDrawer(GravityCompat.START);
             }
         });
 
-        final RecyclerView rvnews =findViewById(R.id.rv_news);
+        final SmartRecyclerView rvnews =findViewById(R.id.rv_news);
+        rvnews.setmEmptyView(vpEmptyNews);
         rvnews.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
 
         NewsAdapter newsAdapter = new NewsAdapter(getApplicationContext(),this);

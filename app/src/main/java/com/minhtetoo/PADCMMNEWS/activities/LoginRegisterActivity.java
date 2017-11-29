@@ -5,17 +5,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import com.minhtetoo.PADCMMNEWS.R;
+import com.minhtetoo.PADCMMNEWS.delegates.LoginRegisterDelegate;
 import com.minhtetoo.PADCMMNEWS.fragments.LoginFragment;
+import com.minhtetoo.PADCMMNEWS.fragments.RegisterFragment;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
  * Created by min on 11/26/2017.
  */
 
-public class LoginRegisterActivity extends AppCompatActivity {
+public class LoginRegisterActivity extends AppCompatActivity implements
+        LoginRegisterDelegate {
+
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+
+
+
     public static Intent newIntent(Context con){
 
         Intent i = new Intent(con ,LoginRegisterActivity.class);
@@ -39,5 +50,38 @@ public class LoginRegisterActivity extends AppCompatActivity {
 
 
         }
+        setSupportActionBar(toolbar);
+
+
     }
+
+    @Override
+    public void onTapLogin() {
+
+    }
+
+    @Override
+    public void onTapForgetPassWord() {
+
+    }
+
+    @Override
+    public void onTapToRegister() {
+
+        getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(R.anim.enter,R.anim.exit,R.anim.pop_enter,R.anim.pop_exit)
+                .replace(R.id.fl_container, RegisterFragment.newInstance())
+                .addToBackStack(null)
+                .commit();
+
+    }
+
+    @Override
+    public void onSetTitle(String title) {
+
+        toolbar.setTitle(title);
+
+    }
+
+
 }

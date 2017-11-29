@@ -46,8 +46,14 @@
     <string name="btn_share_news">Share</string>
     <string name="dummy_related_news">မူတည္ၿပီး လူငယ္မ်ား၏ အသက္ဆံုး႐ံႈးမႈျဖစ္ေပၚေနသျဖင့္ လူငယ္မူ၀ါဒကို သေဘာတူလက္ခံ၍ Action Plan ေရးဆြဲရာ၌ Traditional Challenge အေပၚ ထည့္သြင္းေရးဆြဲသြားရန္ လိုအပ္သည္ဟု ႏိုင္ငံေတာ္၏ အတိုင္ပင္ခံပုဂၢိဳလ္ မွာၾကားထားေၾကာင္း ျပန္ၾကားေရး၀န္ႀကီးဌာန၏ သတင္းထုတ္ျပန္ခ်က္အရသိရၿပီး လူငယ္ဘက္စံုဖြံ႕ၿဖဳိးေရးပြဲေတာ္ က်င္းပေရးအတြက္ တတိယအႀကိမ္ ညႇိႏႈိင္းအစည္းအေ၀းသို႔ တက္ေရာက္လာသည့္ ျပည္ေထာင္စု၀န္ႀကီးမ်ားက ႏိုင္ငံေတာ္၏ အတိုင္ပင္ခံပုဂၢိဳလ္က ယင္းကဲ့သို႔မွာၾကားထားေၾကာင္း         ထည့္သြင္းေဆြးေႏြးခဲ့ျခင္းျဖစ္သည္။</string>
     <string name="related_news">Related News</string>
-    <string name="btn_to_register">New User ? Register</string>
-    <string name="btn_forgot_password">Forget Password</string>
+    <string name="btn_to_register"><u><i>New User ? Register</i></u></string>
+    <string name="btn_forgot_password"><u><i>Forget Password</i></u></string>
+    <string name="hint_enter_password">password</string>
+    <string name="hint_enter_phone">Your Phone</string>
+    <string name="hint_enter_email">Your Email</string>
+    <string name="lbl_mark_my_home_on_google_map">mark_my_home_on_google_map</string>
+    <string name="lbl_navigate_to_login">navigate_to_login</string>
+    <string name="msg_generic_no_data">no data to display</string>
 
 
 </resources>
