@@ -2,6 +2,7 @@ package com.minhtetoo.PADCMMNEWS.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +14,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewAnimationUtils;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import com.minhtetoo.PADCMMNEWS.R;
 import com.minhtetoo.PADCMMNEWS.adapters.NewsAdapter;
@@ -30,10 +34,17 @@ public class MainActivity extends AppCompatActivity implements NewsItemsDelegate
     @BindView(R.id.rv_news)
     SmartRecyclerView smartRecyclerView;
 
+    @BindView(R.id.coordinator)
+    CoordinatorLayout coordinatorLayout;
+
     @BindView(R.id.vp_empty_news)
     EmptyViewPod vpEmptyNews;
 
     private SmartScrollListener mSmartScrollsitener;
+    Animation ScaleDownAndTranslate;
+    Animation ScaleUpAndTranslate;
+
+    private boolean isRightPanelOpen = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +54,11 @@ public class MainActivity extends AppCompatActivity implements NewsItemsDelegate
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ScaleDownAndTranslate = AnimationUtils.loadAnimation(this, R.anim.scale_down_and_translate);
+        ScaleUpAndTranslate = AnimationUtils.loadAnimation(this, R.anim.scale_up_and_translate);
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -92,12 +108,25 @@ public class MainActivity extends AppCompatActivity implements NewsItemsDelegate
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+       if (id == R.id.add){
+           mDrawerLayout.openDrawer(GravityCompat.END);
+           coordinatorLayout.startAnimation(ScaleDownAndTranslate);
+           isRightPanelOpen = true;
+
+       }
+
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(isRightPanelOpen){
+            mDrawerLayout.closeDrawer(GravityCompat.END);
+            coordinatorLayout.startAnimation(ScaleUpAndTranslate);
+
+
+        }
     }
 
     @Override
