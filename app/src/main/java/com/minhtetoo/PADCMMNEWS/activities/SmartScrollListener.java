@@ -27,19 +27,26 @@ public class SmartScrollListener extends RecyclerView.OnScrollListener {
     public void onScrolled(RecyclerView rv, int dx, int dy) {
         super.onScrolled(rv, dx, dy);
 
-        currentDy = dy;
+        currentDy+= dy;
         if (currentDy > previousDy) {
             //from top to bottom
+            previousDy = currentDy;
         } else if (currentDy < previousDy) {
             //from bottom to top
-            isListEndReached = false;
+            if (currentDy + 700<previousDy){
+
+                isListEndReached = false;
+                previousDy = currentDy;
+
+            }
+
         }
 
         visibleItemCount = rv.getLayoutManager().getChildCount();
         totalItemCount = rv.getLayoutManager().getItemCount();
         pastVisibleItems = ((LinearLayoutManager) rv.getLayoutManager()).findFirstVisibleItemPosition();
 
-        previousDy = currentDy;
+
     }
 
     @Override
