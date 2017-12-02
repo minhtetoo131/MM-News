@@ -11,9 +11,8 @@ import com.minhtetoo.PADCMMNEWS.data.VO.NewsVO;
 import com.minhtetoo.PADCMMNEWS.delegates.NewsItemsDelegate;
 import com.minhtetoo.PADCMMNEWS.viewholder.NewsViewHolder;
 
-/**
- * Created by min on 11/4/2017.
- */
+import java.util.List;
+
 
 public class NewsAdapter extends BaseRecyclerAdapter<NewsViewHolder,NewsVO> {
 
@@ -40,6 +39,11 @@ public class NewsAdapter extends BaseRecyclerAdapter<NewsViewHolder,NewsVO> {
     @Override
     public void onBindViewHolder(NewsViewHolder holder, int position) {
 
+    }
+
+    @Override
+    public int getItemCount() {
+        return  16;
     }
 
 

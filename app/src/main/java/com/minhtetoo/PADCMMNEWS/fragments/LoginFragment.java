@@ -84,4 +84,12 @@ public class LoginFragment extends BaseFragment {
 
 
     }
+
+
+    @Override
+    public void checkNetworkConnectivity() {
+        super.checkNetworkConnectivity();
+
+//        check
+    }
 }
