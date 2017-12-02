@@ -17,7 +17,7 @@ import com.minhtetoo.PADCMMNEWS.adapters.RelatedNewsRecyclerAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class NewsDetailsActivity extends AppCompatActivity {
+public class NewsDetailsActivity extends BaseActivity {
 
     @BindView(R.id.vp_news_images) ViewPager viewPager;
     @BindView(R.id.rv_related_news)RecyclerView rvRelatednews;

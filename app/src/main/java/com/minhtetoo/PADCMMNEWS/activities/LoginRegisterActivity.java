@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
  * Created by min on 11/26/2017.
  */
 
-public class LoginRegisterActivity extends AppCompatActivity implements
+public class LoginRegisterActivity extends BaseActivity implements
         LoginRegisterDelegate {
 
     @BindView(R.id.toolbar)

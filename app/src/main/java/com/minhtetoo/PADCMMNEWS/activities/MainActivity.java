@@ -23,7 +23,7 @@ import com.minhtetoo.PADCMMNEWS.delegates.NewsItemsDelegate;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements NewsItemsDelegate {
+public class MainActivity extends BaseActivity implements NewsItemsDelegate {
 
     @BindView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
