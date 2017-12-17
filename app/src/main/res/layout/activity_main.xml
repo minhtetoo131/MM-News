@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="com.minhtetoo.PADCMMNEWS.activities.MainActivity">
+        tools:context="com.minhtetoo.PADCMMNEWS.activities.NewsListActivity">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -29,33 +29,41 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+       <android.support.v4.widget.SwipeRefreshLayout
+           android:id="@+id/swipe_refresh_layout"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               >
 
 
 
-            <com.minhtetoo.PADCMMNEWS.components.SmartRecyclerView
-                android:id="@+id/rv_news"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
+               <com.minhtetoo.PADCMMNEWS.components.SmartRecyclerView
+                   android:id="@+id/rv_news"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   >
 
 
 
-            </com.minhtetoo.PADCMMNEWS.components.SmartRecyclerView>
+               </com.minhtetoo.PADCMMNEWS.components.SmartRecyclerView>
 
-            <include
-                android:id="@+id/vp_empty_news"
-                layout="@layout/view_pod_empty"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                />
+               <include
+                   android:id="@+id/vp_empty_news"
+                   layout="@layout/view_pod_empty"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   />
 
 
 
-        </RelativeLayout>
+           </RelativeLayout>
+       </android.support.v4.widget.SwipeRefreshLayout>
 
 
 

@@ -2,6 +2,7 @@ package com.minhtetoo.PADCMMNEWS;
 
 import android.app.Application;
 
+import com.minhtetoo.PADCMMNEWS.data.model.NewsModel;
 
 
 public class SFCNewsApp extends Application {
@@ -10,5 +11,7 @@ public class SFCNewsApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        NewsModel.getObjInstance().startloadingMMNews();
     }
 }

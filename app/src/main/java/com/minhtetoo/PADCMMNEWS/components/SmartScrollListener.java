@@ -1,4 +1,4 @@
-package com.minhtetoo.PADCMMNEWS.activities;
+package com.minhtetoo.PADCMMNEWS.components;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;

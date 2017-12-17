@@ -44,6 +44,7 @@ public class NewsDetailsActivity extends BaseActivity {
 
         rvRelatednews.setAdapter(new RelatedNewsRecyclerAdapter(getApplicationContext()));
 
+        viewPager.setOffscreenPageLimit(adapter.getCount());
 
     }
 }
